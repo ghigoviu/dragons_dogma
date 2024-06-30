@@ -1,6 +1,8 @@
 drop database if exists dragons_dogma;
 create database dragons_dogma;
 
+use dragons_dogma
+
 create table categoria(
     id int primary key auto_increment,
     nombre varchar(10),
@@ -45,8 +47,6 @@ create table inventario(
     foreign key (id_item) references item(id),
 );
 
-
-
 insert into categoria(nombre, habilidad, elemento) values
     ('Humano', null, 'Eléctrico'),
     ('Bestia', 'resistencia', 'Fuego'),
@@ -66,7 +66,7 @@ insert into tipo_item(nombre) values
     ('Transacción'),
     ('Skin');
 
-insert into item(nombre, tipo) values
+insert into item(nombre, id_tipo) values
     ('Poción de vida', 1),
     ('Piedra teletransportadora', 2),
     ('Cabeza de medusa', 2),
